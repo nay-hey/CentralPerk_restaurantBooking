@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1>Menu</h1>
+
+    <!-- Begin col -->
+    <div class="column">
+        {% for item in menu.menu %}
+            <div class="menu-item">
+                <h2>
+                    <a href="{% url 'menu_item' pk=item.pk %}">
+                        {{ item.name }}
+                    </a>
+                </h2>
+                <p class="description">{{ item.description }}</p>
+                <span class="menu-price">
+                    ${{ item.price }}.00
+                </span>
+                {% if item.is_vegetarian %}
+                    <span class="vegetarian-indicator">Vegetarian</span>
+                {% endif %}
+                {% if item.is_spicy %}
+                    <span class="spicy-indicator">Spicy</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <!-- End col -->
+
+    <!-- Add a section for special offers or promotions -->
+    <div class="special-offers">
+        <h2>Special Offers</h2>
+        <p>Check out our special promotions and discounts!</p>
+        <ul>
+            <li>Free drink with every meal this week!</li>
+            <li>10% off on all desserts!</li>
+        </ul>
+    </div>
+
+    <!-- Add a section for recommended items -->
+    <div class="recommended-items">
+        <h2>Recommended Items</h2>
+        <p>Don't miss out on our chef's recommendations.</p>
+        <ul>
+            <li><a href="{% url 'menu_item' pk=1 %}">Chef's Special Pasta</a></li>
+            <li><a href="{% url 'menu_item' pk=3 %}">Grilled Salmon Delight</a></li>
+        </ul>
+    </div>
+
+{% endblock %}

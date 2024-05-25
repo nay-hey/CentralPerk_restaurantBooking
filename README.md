@@ -50,6 +50,7 @@
 1. **Make migrations**:
    - In the terminal, navigate to your project directory and run:
      ```
+     python manage.py makemigrations restaurant
      python manage.py makemigrations
      python manage.py migrate
      ```

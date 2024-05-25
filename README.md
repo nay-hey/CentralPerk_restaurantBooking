@@ -59,6 +59,8 @@
           }
       }
      ```
+   - Edit this DATABASES section accordingly.
+   
 ### Django Setup
 1. **Make migrations**:
    - In the terminal, navigate to your project directory and run:

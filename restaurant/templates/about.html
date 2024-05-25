@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <article>
+    <h1>About Us</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <p>
+          Based in Santa Inez, Goa, Central Perk is a family owned
+          Mediterranean  café, blending traditional recipes with a modern flair.
+        </p>
+        <p>
+          The chefs draw inspiration from Italian, Mexican, and American culture
+          and have a menu of 12-15 items that they rotate seasonally.
+        </p>
+
+        <p>
+          The café boasts a rustic and relaxed atmosphere with moderate prices, 
+          making it a popular spot for meals throughout the day.
+        </p>
+
+        <p>
+          Central Perk is owned by two Italian brothers, Mario and Adrian,
+           who moved to India to fulfill their shared dream of running a café.
+        </p>
+
+        <p>
+          To craft the menu, Mario relies on family recipes and his experience
+          as a chef in Italy.
+        </p>
+
+        <p>
+          Adrian does all the marketing for the restaurant and led the effort to
+          expand the menu beyond classic Italian to incorporate additional
+          cuisines from the mediterranean region.
+        </p>
+      </div>
+      <!--End col-->
+
+      <!--Begin col-->
+      <div class="column">
+        <figure class="figure">
+          <img
+            src="{% static 'img/mario-and-adrian.jpg' %}"
+            alt="Mario and Adrian"
+          />
+          <figcaption class="figure-caption">
+            Central Perk owners Mario and Adrian.
+          </figcaption>
+        </figure>
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+  </article>
+</section>
+{% endblock %}

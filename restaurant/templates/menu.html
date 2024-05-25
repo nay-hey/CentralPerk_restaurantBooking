@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    /* Global styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* Menu styling */
+    h1 {
+        margin-bottom: 30px;
+    }
+    
+    .column {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .menu-container {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: hidden; /* Hide overflow */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+        margin-bottom: 20px; /* Add some spacing at the bottom */
+    }
+    
+    .menu-item {
+        flex: 0 0 220px; /* Specify the width of each menu item */
+        margin-right: 20px; /* Add spacing between items */
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .menu-item h2 {
+        margin-top: 0;
+    }
+    
+    .menu-item p.description {
+        color: #666;
+    }
+    
+    .menu-item span.menu-price {
+        font-weight: bold;
+    }
+    
+    .menu-item span.vegetarian-indicator {
+        color: green;
+        font-weight: bold;
+    }
+    
+    .menu-item span.spicy-indicator {
+        color: red;
+        font-weight: bold;
+    }
+    
+    /* Navigation buttons */
+    .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .nav-button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .nav-button.left {
+        left: 0;
+    }
+    
+    .nav-button.right {
+        right: 0;
+    }
+    
+    /* Special Offers styling */
+    .special-offers {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+    
+    .special-offers h2 {
+        margin-top: 0;
+    }
+    
+    .special-offers ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .special-offers ul li {
+        margin-bottom: 10px;
+    }
+    
+    /* Recommended Items styling */
+    .recommended-items {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .recommended-items h2 {
+        margin-top: 0;
+    }
+    
+    .recommended-items p {
+        color: #666;
+    }
+    
+    .recommended-items-container {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+        margin-bottom: 50px; /* Add some spacing at the bottom */
+    }
+    
+    .recommended-items-container article {
+        flex: 0 0 220px; /* Specify the width of each recommended item */
+        margin-right: 20px; /* Add spacing between items */
+    }
+    
+    .recommended-items-container img {
+        width: 100%;
+        border-radius: 5px;
+    }
+    
+    .recommended-items-container p {
+        margin-top: 10px;
+    }
+    
+    /* Footer styling */
+    footer {
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+</style>    
+    <h1>Menu</h1>
+    <!-- 
+    <div class="column">
+        <div class="menu-container">
+            {% for item in menu.menu %}
+                <div class="menu-item">
+                    <h2>
+                        <a href="{% url 'menu_item' pk=item.pk %}">
+                            {{ item.name }}
+                        </a>
+                    </h2>
+                    <p class="description">{{ item.description }}</p>
+                    <span class="menu-price">
+                        ${{ item.price }}.00
+                    </span>
+                    {% if item.is_vegetarian %}
+                        <span class="vegetarian-indicator">Vegetarian</span>
+                    {% endif %}
+                    {% if item.is_spicy %}
+                        <span class="spicy-indicator">Spicy</span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    -->
+    <!-- End col -->
+
+    <!-- Add a section for special offers or promotions -->
+    <div class="special-offers">
+        <h2>Special Offers</h2>
+        <p>Discover our exciting special promotions and discounts!</p>
+        <ul>
+            <li>Enjoy a complimentary drink with every meal this week!</li>
+            <li>Indulge in our delectable desserts with an exclusive 10% discount on all sweet treats!</li>
+            <li>
+        </ul>
+        <h2>Don't miss out on these limited-time offers at Central Perk!</h2>
+    </div>
+
+    <!-- Add a section for recommended items -->
+    <div class="recommended-items">
+        <h2>Recommended Items</h2>
+        <p>Don't miss out on our chef's recommendations.</p>
+        <div class="recommended-items-container">
+            <article>
+                <img src="{% static 'img/menu_items/Bruschetta.jpg' %}">
+                <p>
+                    Monte Cristo Sandwich
+                </p>
+            </article>
+            <article>
+                <img src="{% static 'img/menu_items/Greek salad.jpg' %}">
+                <p>
+                    Chef's Special Salad
+                </p>
+            </article>
+            <article>
+                <img src="{% static 'img/menu_items/Grilled fish.jpg' %}">
+                <p>
+                    Chocolate Delight
+                </p>
+            </article>
+            <article>
+                <img src="{% static 'img/restaurant food B.jpg' %}">
+                <p>
+                    Chicken Roll
+                </p>
+            </article>
+            <article>
+                <img src="{% static 'img/menu_items/Lemon dessert.jpg' %}">
+                <p>
+                    Lemon Dessert
+                </p>
+            </article>
+            <article>
+                <img src="{% static 'img/Grill B.jpg' %}">
+                <p>
+                    Turtle Brownie Ice Cream Dessert
+                </p>
+            </article>
+            <article>
+                <img src="{% static 'img/Grilled fish B.jpg' %}">
+                <p>
+                    Classic Grilled Cheeseburger
+                </p>
+            </article>
+            <article>
+                <img src="{% static 'img/pasta.jpg' %}">
+                <p>
+                    Pasta
+                </p>
+            </article>
+        </div>
+    </div>
+{% endblock %}

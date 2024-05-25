@@ -45,7 +45,20 @@
      GRANT ALL PRIVILEGES ON reservations.* TO '*username*'@'localhost';
      FLUSH PRIVILEGES;
      ```
-
+5. **Change settings.py in CentralPerk folder**:
+   - Go to DATABASES section:
+     ```sql
+     DATABASES = {
+          'default': {
+              'ENGINE': 'django.db.backends.mysql',
+              'NAME': #'name',
+              'HOST' : '127.0.0.1',
+              'PORT' : '3306',
+              'USER' : #'username',
+              'PASSWORD' : #'password',
+          }
+      }
+     ```
 ### Django Setup
 1. **Make migrations**:
    - In the terminal, navigate to your project directory and run:
